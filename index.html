@@ -564,7 +564,7 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/parallax/parallax.min.js"></script>
     <script src="js/main.js"></script>
-    <!-- Template Javascript -->
+    <!-- Javascript -->
      <script>
     function updateCustomAmount(amount) {
         document.getElementById('custom-amount').value = amount;
@@ -586,7 +586,7 @@
         document.getElementById('label-amount-50').textContent = symbol + '50';
         document.getElementById('label-amount-100').textContent = symbol + '100';
 
-        // If a radio button is selected, update the custom amount value to reflect the new currency symbol
+        // update the custom amount value to reflect the new currency symbol
         var selectedAmount = document.querySelector('input[name="amount"]:checked');
         if (selectedAmount) {
             document.getElementById('custom-amount').value = selectedAmount.value;
