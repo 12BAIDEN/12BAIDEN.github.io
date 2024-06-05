@@ -251,6 +251,40 @@
 
     <!-- Javascript -->
     <script src="js/main.js"></script>
+       <script>
+    function updateCustomAmount(amount) {
+        document.getElementById('custom-amount').value = amount;
+    }
+
+    function clearRadioButtons() {
+        var radios = document.getElementsByName('amount');
+        for (var i = 0; i < radios.length; i++) {
+            radios[i].checked = false;
+        }
+    }
+
+    function updateCurrencySymbol() {
+        var currencySelect = document.getElementById('currency');
+        var selectedOption = currencySelect.options[currencySelect.selectedIndex];
+        var symbol = selectedOption.getAttribute('data-symbol');
+
+        document.getElementById('label-amount-10').textContent = symbol + '10';
+        document.getElementById('label-amount-50').textContent = symbol + '50';
+        document.getElementById('label-amount-100').textContent = symbol + '100';
+
+        // update the custom amount value to reflect the new currency symbol
+        var selectedAmount = document.querySelector('input[name="amount"]:checked');
+        if (selectedAmount) {
+            document.getElementById('custom-amount').value = selectedAmount.value;
+        }
+    }
+
+    // Initialize the currency symbol on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        updateCurrencySymbol();
+    });
+</script>
+
 </body>
 
 </html>
